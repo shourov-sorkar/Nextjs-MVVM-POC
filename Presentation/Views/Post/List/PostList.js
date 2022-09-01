@@ -25,7 +25,7 @@ export default function PostList() {
         }}
       >
         <h2>Post List</h2>
-        <Button title={"Add New Post"} />
+        <Button title={"Add New Post"}   onClick={() => router.push("/post/new")}/>
       </div>
       <List
         data={Posts}

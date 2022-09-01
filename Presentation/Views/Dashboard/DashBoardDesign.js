@@ -121,7 +121,7 @@ export default function DashBoardDesign() {
           <ListItem  button onClick={() => router.push("/post/postlist")}>
             Vew Post List
           </ListItem>
-          <ListItem  button >
+          <ListItem  button onClick={() => router.push("/post/new")}>
             Add New Post
           </ListItem>
         </List>

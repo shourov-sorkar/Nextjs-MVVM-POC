@@ -7,8 +7,8 @@ import {
 } from "../DataSource/PostDataHandler";
 
 export async function createPost(data) {
-  const { result, error } = await create(data);
-  return { result, error };
+  const result = await create(data);
+  return result;
 }
 
 export async function deletePost(id) {

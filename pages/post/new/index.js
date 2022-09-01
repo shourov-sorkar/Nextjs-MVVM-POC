@@ -1,10 +1,10 @@
 import React from "react";
-import PostNew from "./../../../Presentation/Views/Post/New/PostNew";
+import NewPost from "../../../Presentation/Views/Post/New/NewPost";
 
 const index = () => {
   return (
     <div>
-      <PostNew />
+      <NewPost />
     </div>
   );
 };

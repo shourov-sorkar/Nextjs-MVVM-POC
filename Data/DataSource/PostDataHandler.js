@@ -7,7 +7,6 @@ export async function getAll() {
   try {
     let data = await Axios.get(baseUrl + "/posts");
     // console.log(data);
-
     return Promise.resolve({ error: null, result: data?.data });
   } catch (err) {
     return Promise.resolve({ error: err.message, result: null });
@@ -28,12 +27,25 @@ export async function getOne(id) {
 }
 
 export async function create(PostData) {
-  let { error, result } = await getAll();
-  let data = result;
-  PostData.id = new Date().getTime().toString();
-  data.push(PostData);
-  window.localStorage.setItem(COLLECTION, JSON.stringify(data));
-  return Promise.resolve({ error: null, result: true });
+  let { title, description } = PostData;
+  fetch("https://jsonplaceholder.typicode.com/posts", {
+    method: "POST",
+    body: JSON.stringify({
+      title: title,
+      body: description,
+      userId: 1,
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => {
+      alert(JSON.stringify(json))
+      console.log(json);
+      return json
+    })
+    .catch((err) => console.log(err));
 }
 
 export async function deleteOne(id) {
