@@ -9,7 +9,7 @@ export default function List({ data = [], onRowClick }) {
           <thead>
             <tr>
               <th>SL</th>
-              <th>Title</th>
+              <th>Name</th>
               <th>Description</th>
               <th>Action</th>
             </tr>
@@ -19,8 +19,8 @@ export default function List({ data = [], onRowClick }) {
               return (
                 <tr key={i}>
                   <td>{i + 1}</td>
-                  <td>{item.title}</td>
-                  <td>{item.body}</td>
+                  <td>{item.name}</td>
+                  <td>{item.overview}</td>
                   <th>
                     <Button
                       onClick={() => DeletePostUseCase(item.id)}

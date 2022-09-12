@@ -5,8 +5,8 @@ const COLLECTION = "PostS";
 
 export async function getAll() {
   try {
-    let data = await Axios.get(baseUrl + "/posts");
-    // console.log(data);
+    let data = await Axios.get(baseUrl + "/post");
+    console.log(data);
     return Promise.resolve({ error: null, result: data?.data });
   } catch (err) {
     return Promise.resolve({ error: err.message, result: null });

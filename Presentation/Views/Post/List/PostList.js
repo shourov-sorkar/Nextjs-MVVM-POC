@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 export default function PostList() {
   let router = useRouter();
   const { Posts, getPosts, goToAddPost, goToPostDetail } = useViewModel();
-
+console.log("psoy0", Posts)
   useEffect(() => {
     getPosts();
   }, []);
@@ -28,7 +28,7 @@ export default function PostList() {
         <Button title={"Add New Post"}   onClick={() => router.push("/post/new")}/>
       </div>
       <List
-        data={Posts}
+        data={Posts?.data}
         onRowClick={(id) => router.push(`/Post/detail/${id}`)}
       />
     </div>
